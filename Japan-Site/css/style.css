@@ -6,18 +6,18 @@
 
 body{
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .header{
     background:black;
     display:flex;
-    height:120px;
+    height:7.5rem;
     justify-content: space-between;
     align-items:center;
-    padding:20px;
-    padding-left:40px;
-    padding-right:40px;
+    padding:1.25rem;
+    padding-left:2.5rem;
+    padding-right:2.5rem;
 }
 
 .headerTitle{
@@ -33,7 +33,7 @@ body{
     color: white;
     border: none;
     font-size: 150%;
-    letter-spacing: 2px;
+    letter-spacing: 0.125rem;
 }
 
 .headerButton:hover{
@@ -65,7 +65,7 @@ body{
     font-size: 350%;
     text-transform: uppercase;
     text-align:center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .mainNavigationListItem > a {
@@ -85,7 +85,7 @@ body{
 
 .collections{
     width:100%;
-    padding:40px;
+    padding:2.5rem;
 }
 
 .collectionsTitle, .infoTitle{
@@ -93,19 +93,19 @@ body{
     color:black;
     text-transform: uppercase;
     font-weight: 400;
-    margin-bottom:40px;
+    margin-bottom:2.5rem;
 }
 
 .collectionsList{
     list-style: none;
     display:flex;
-    gap: 40px;
+    gap: 2.5rem;
     flex-wrap: wrap;
 }
 
 .collectionsListItem{
-    width: 500px;
-    height:700px;
+    width: 31.25rem;
+    height:43.75rem;
     flex-shrink: 1;
     flex-grow: 1;
 }
@@ -117,14 +117,14 @@ body{
 }
 
 .info{
-    padding:40px;
+    padding:2.5rem;
     display:flex;
-    gap:40px;
+    gap:2.5rem;
     flex-wrap: wrap;
 }
 
 .block{ 
-    width:400px;
+    width:25rem;
     flex-shrink: 1;
     flex-grow: 1;
 }
@@ -132,16 +132,43 @@ body{
 .info p { 
 }
 
+form{
+    width: 25rem;
+    min-height: 15rem;
+    background: red;
+    display: flex;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 3.125rem;
+    font-size: 1rem;
+    gap: 2rem;
+    border-radius: 0.3125rem;
+}
+
+form label{
+    border-bottom: 0.125rem solid red;
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
 .footer{
-    height:120px;
+    height:7.5rem;
     background:black;
     display:flex;
     color:white;
     justify-content: space-between;
     align-items:center;
-    padding: 20px;
-    padding-left:40px;
-    padding-right:40px;
+    padding: 1.25rem;
+    padding-left:2.5rem;
+    padding-right:2.5rem;
 }
 
 .footerNavigation{
@@ -162,9 +189,9 @@ body{
     font-size:80%;
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:43.75rem) {
     body{
-        font-size:14px;
+        font-size:0.875rem;
     }
     .headerTitle{
         font-size: 380%;
