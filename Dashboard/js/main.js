@@ -11,7 +11,7 @@ const minuteTimer = document.getElementById("js--minuteTimer")
 let timer;
 
 startButton.onclick = function(){
-    if(running === true){ /* stopwatch al loopt dan mag je niks doen */
+    if(running === true){ /* als de stopwatch loopt mag je niks doen */
         return;
     } 
     running = true;
@@ -40,7 +40,6 @@ resetButton.onclick = function(){
 }
 
 /* De slider begint hier */
-
 const rangeValue = document.getElementById("js--rangeValue");
 const slider = document.getElementById("js--slider");
 const body = document.getElementById("js--body");
