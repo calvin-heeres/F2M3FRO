@@ -3,7 +3,7 @@ const stopButton = document.getElementById("js--stop");
 const resetButton = document.getElementById("js--reset");
 let seconds = 0;
 let minutes = 0;
-let running = false; / standaard telt die nog niet /
+let running = false; /* standaard telt die nog niet */
 
 const secondsTimer = document.getElementById("js--secondsTimer")
 const minuteTimer = document.getElementById("js--minuteTimer")
@@ -11,7 +11,7 @@ const minuteTimer = document.getElementById("js--minuteTimer")
 let timer;
 
 startButton.onclick = function(){
-    if(running === true){ /stopwatch al loopt dan mag je niks doen/
+    if(running === true){ /* stopwatch al loopt dan mag je niks doen */
         return;
     } 
     running = true;
@@ -22,7 +22,7 @@ startButton.onclick = function(){
             minuteTimer.innerText = minutes;
             seconds = 0;
         }
-        secondsTimer.innerText = seconds; / <-- Dit is in milliseconden 1000ms = 1 seconden /
+        secondsTimer.innerText = seconds; /* <-- Dit is in milliseconden 1000ms = 1 seconden */
     },  100); 
 }
 
