@@ -1,73 +1,70 @@
-/* Deze variabelen daar kan elk functie bij, want ze zijn geblobaal gedeclareerd */
-const  startButton = document.getElementById("js--start");
+/* deze variabelen daar kan elke functie bij want ze zijn globaal gedecladeerd */
+const startButton = document.getElementById("js--start");
 const stopButton = document.getElementById("js--stop");
 const resetButton = document.getElementById("js--reset");
 let seconds = 0;
 let minutes = 0;
-let running = false; / standaard telt die nog niet /
+let running = false; / standaard telt het nog niet /
 
-const secondsTimer = document.getElementById("js--secondsTimer")
-const minuteTimer = document.getElementById("js--minuteTimer")
+const secondsTimer = document.getElementById("js--secondsTimer");
+const minutesTimer = document.getElementById("js--minutesTimer");
 
 let timer;
 
-startButton.onclick = function(){
-    if(running === true){ /stopwatch al loopt dan mag je niks doen/
+startButton.onclick = function () {
+    if (running === true) { / stopwatch al loopt dan mag je niks doen/
         return;
-    } 
+    }
     running = true;
-    timer = setInterval(function(){
-        seconds = seconds + 1; 
-        if(seconds ===60){
+    timer = setInterval(function () {
+        seconds = seconds + 1;
+        if (seconds === 60) {
             minutes = minutes + 1;
-            minuteTimer.innerText = minutes;
+            minutesTimer.innerText = minutes;
             seconds = 0;
         }
-        secondsTimer.innerText = seconds; / <-- Dit is in milliseconden 1000ms = 1 seconden /
-    },  100); 
+        secondsTimer.innerText = seconds; / dit laat die zien in de html /
+    }, 100); / dit is in miliseconden, 1000 ms is 1 seconden/
 }
 
-stopButton.onclick = function(){
+stopButton.onclick = function () {
     clearInterval(timer);
     running = false;
 }
-resetButton.onclick = function(){
-    clearInterval(timer)
+
+resetButton.onclick = function () {
+    seconds = 0;
+    minutes = 0;
+    clearInterval(timer);
     running = false
-    minutes = 0
-    seconds = 0 
-    secondsTimer.innerHTML = seconds;
-    secondsTimer.innerHTML = minutes;
+    secondsTimer.innerText = 0;
+    minutesTimer.innerText = 0;
 }
 
-/* Hier begint de slider */
+/* hier begint de slider */
 const rangeValue = document.getElementById("js--rangeValue");
 const slider = document.getElementById("js--slider");
 const body = document.getElementById("js--body");
-console.log(body);
+
 slider.value = 2;
 rangeValue.innerText = slider.value + "x";
 
-slider.oninput = function(){
+slider.oninput = function () {
     rangeValue.innerText = slider.value + "x";
     body.style.fontSize = slider.value + "rem";
 }
 
-const oudgebouw = document.getElementById("js--img")
-
-
-    const paragraph = document.getElementById("js--text");
+const paragraph = document.getElementById("js--text");
+const img = document.getElementById("js--image");
 //data ophalen
-let data = fetch("../data.json").then(
-    function(binnenGekomenData){
-        return binnenGekomenData.json();
+let data = fetch("data.json").then(
+    function (binnengekomendata){
+        return binnengekomendata.json();
+        console.log(binnengekomend)
     }).then(
-        function(echteData){
-            paragraph.innerHTML = echteData.text;
-            oudgebouw.setAttribute("src",echteData.img);
+        function (echtedata) {
+            console.log(echtedata);
+            paragraph.innerHTML = echtedata.text;
+            img.src = echtedata.image;
         }
     );
-
-
-
-const text = document.getElementById("js--text");
